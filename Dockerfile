@@ -14,7 +14,7 @@ RUN echo "deb http://packages.erlang-solutions.com/ubuntu trusty contrib" >> /et
     && apt-get autoremove \
     && apt-get install -yf erlang=$ERLANG_VERSION unzip wget \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*o
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
