@@ -3,8 +3,8 @@ FROM ubuntu:14.04.1
 MAINTAINER Michael Schaefermeyer <michael.schaefermeyer@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV ERLANG_VERSION 1:17.4
-ENV ELIXIR_VERSION 1.0.3
+ENV ERLANG_VERSION 1:18.0
+ENV ELIXIR_VERSION 1.0.5
 
 RUN echo "deb http://packages.erlang-solutions.com/ubuntu trusty contrib" >> /etc/apt/sources.list \
     && apt-key adv --fetch-keys http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc \
@@ -32,7 +32,6 @@ RUN wget -q https://github.com/elixir-lang/elixir/releases/download/v$ELIXIR_VER
     && ln -s /usr/local/elixir/bin/elixir /usr/local/bin/elixir \
     && ln -s /usr/local/elixir/bin/mix /usr/local/bin/mix \
     && ln -s /usr/local/elixir/bin/iex /usr/local/bin/iex
-
 
 RUN /usr/local/bin/mix local.hex --force \
     && /usr/local/bin/mix local.rebar --force
