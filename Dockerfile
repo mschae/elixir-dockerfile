@@ -3,8 +3,8 @@ FROM ubuntu:14.04.1
 MAINTAINER Michael Schaefermeyer <michael.schaefermeyer@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV ERLANG_VERSION 1:18.0
-ENV ELIXIR_VERSION 1.0.5
+ENV ERLANG_VERSION 1:18.1
+ENV ELIXIR_VERSION 1.1.0
 
 RUN echo "deb http://packages.erlang-solutions.com/ubuntu trusty contrib" >> /etc/apt/sources.list \
     && apt-key adv --fetch-keys http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc \
