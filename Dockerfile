@@ -1,25 +1,13 @@
-FROM ubuntu:14.04.1
+FROM erlang:18.1
 
 MAINTAINER Michael Schaefermeyer <michael.schaefermeyer@gmail.com>
 
-ENV DEBIAN_FRONTEND noninteractive
-ENV ERLANG_VERSION 1:18.1
-ENV ELIXIR_VERSION 1.1.0
+ENV TERM xterm
+ENV ELIXIR_VERSION 1.1.1
 
-RUN echo "deb http://packages.erlang-solutions.com/ubuntu trusty contrib" >> /etc/apt/sources.list \
-    && apt-key adv --fetch-keys http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc \
-    && apt-get update \
-    && apt-get install --fix-broken \
-    && apt-get autoclean \
-    && apt-get autoremove \
-    && apt-get install -yf erlang=$ERLANG_VERSION unzip wget git \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-RUN locale-gen en_US.UTF-8
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.UTF-8
+RUN apt-get update \
+    && apt-get install -y unzip \
+    && rm -rf /usr/src/otp-src /var/lib/apt/lists/*
 
 RUN mkdir /usr/local/elixir
 
