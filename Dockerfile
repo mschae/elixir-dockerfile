@@ -3,7 +3,7 @@ FROM erlang:18.1
 MAINTAINER Michael Schaefermeyer <michael.schaefermeyer@gmail.com>
 
 ENV TERM xterm
-ENV ELIXIR_VERSION 1.2.0-rc.0
+ENV ELIXIR_VERSION 1.2.0-rc.1
 
 RUN apt-get update \
     && apt-get install -y unzip \
